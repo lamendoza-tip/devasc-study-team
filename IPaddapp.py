@@ -3,11 +3,17 @@
 import urllib.parse
 import requests
 
+import urllib.parse
+import requests
+
+import urllib.parse
+import requests
+
 while True:
     print("Press Y if you want to check your own IP")
-    print("Press N to quit")
+    print("Press N if you want to put an IP to check")
+    print("Press Q to quit")
     initial = input("Enter here: ")
-
 
     # =========================== Option 1 =========================== 
     if initial == "Y" or initial == "y":
@@ -28,6 +34,21 @@ while True:
         print("=============================================")
 
 
-    # =========================== Option 2 =========================== 
+    # =========================== Option 2 ==================================
     if initial == "N" or initial == "n":
-        break
+        main_api = "http://ip-api.com/json/"
+        ip = input("Enter Public IP address: ")
+        url = main_api + ip
+        print("=============================================")
+        print("URL: " +url)
+
+        # Get JSON Data
+        json_data = requests.get(url).json()
+
+        print(json_data)
+
+    # =========================== Option 3 =========================== 
+    if initial == "q" or initial == "Q":
+            break
+
+
