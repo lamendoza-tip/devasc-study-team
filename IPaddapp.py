@@ -45,7 +45,16 @@ while True:
         # Get JSON Data
         json_data = requests.get(url).json()
 
-        print(json_data)
+        print("=============================================")
+        print("IP Query Status: " + (json_data["status"]))
+        print("Public IP: " + (json_data["query"]))
+        print("Country: " + str(json_data["country"]))
+        print("Country Code: " + str(json_data["countryCode"]))
+        print("Region: " + str(json_data["regionName"]))
+        print("ISP: " + str(json_data["isp"]))
+        print("ASN & Provider: " + str(json_data["as"]))
+        print("=============================================")
+
 
     # =========================== Option 3 =========================== 
     if initial == "q" or initial == "Q":
